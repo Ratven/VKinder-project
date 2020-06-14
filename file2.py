@@ -85,6 +85,43 @@ def enter_data():
     return require_dict
 
 
+# def enter_data_2():
+#     user_dict = get_user_data(user_id)
+#     require_dict = {}
+#     try:
+#         if user_dict['city']:
+#             require_dict['city'] = user_dict['city']
+#         else:
+#             require_dict['city'] = get_city_code(input('Enter city: '))
+#
+#         if user_dict['age']:
+#             require_dict['age_from'] = user_dict['age'] - 5
+#             require_dict['age_to'] = user_dict['age'] + 5
+#         else:
+#             require_dict['age_from'] = int(input('Enter minimal age: '))
+#             require_dict['age_to'] = int(input('Enter maximal age: '))
+#
+#         if user_dict['sex']:
+#             require_dict['sex'] = (require_dict['sex'] + 1) % 2
+#         else:
+#             require_dict['sex'] = input('Enter gender (M/F): ')
+#
+#         require_dict['interests'] = input('Enter interests: ')
+#         require_dict['music'] = input('Enter music interests: ')
+#         require_dict['books'] = input('Enter literature interests: ')
+#
+#         if require_dict['sex'].lower() not in ['m', 'f']:
+#             raise KeyError
+#
+#     except KeyError:
+#         print("Wrong Enter! Please try again!")
+#         require_dict = enter_data()
+#     except ValueError:
+#         print("Wrong Enter! Age must be number, please try again.")
+#         require_dict = enter_data()
+#     return require_dict
+
+
 def get_requirements_dict():
     """gets and returns dict of preferred data of searching users"""
     print("ENTERING THE DATA:")
