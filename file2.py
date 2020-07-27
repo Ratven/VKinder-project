@@ -286,6 +286,11 @@ def get_pics(user_dict):
     return final_list
 
 
+def write_to_file(f_name, info):
+    with open(f_name, 'w', encoding="utf-8") as ff:
+        json.dump(info, ff, ensure_ascii=False, indent=2)
+
+
 def create_db():
     cur.execute("""CREATE TABLE IF NOT EXISTS photos(
     id serial PRIMARY KEY,
@@ -332,6 +337,7 @@ if __name__ == '__main__':
         suitable_users_dict[1] = users_list
     file_name = user_id + 'recommendations.json'
     file_info = get_pics(suitable_users_dict)
+    write_to_file(file_name, file_info)
     create_db()
     for final_user in file_info:
         set_to_base(final_user)
